@@ -23,8 +23,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if Auth.auth().currentUser == nil {
             let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
             let loginVC = storyboard.instantiateViewController(withIdentifier: ID_SB_LOGIN_VC)
-            window?.makeKeyAndVisible()
-            window?.rootViewController?.present(loginVC, animated: true, completion: nil)
+//            window?.makeKeyAndVisible()
+//            window?.rootViewController?.present(loginVC, animated: true, completion: nil)
+            self.window?.rootViewController?.present(loginVC, animated: true, completion: nil)
         }
         
         return true

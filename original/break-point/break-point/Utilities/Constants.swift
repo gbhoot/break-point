@@ -22,3 +22,6 @@ let ID_SB_LOGIN_VC              =   "loginVC"
 let ID_SB_LOGIN_EMAIL_VC        =   "loginEmailVC"
 //let ID_SB_SEGUE_EMAIL_LOGIN_VC  =   "loginByEmailVC"
 
+// Identifiers - Table View Cells
+let ID_TB_FEED_CELL             =   "feedCell"
+

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 @IBDesignable
 
@@ -16,6 +17,13 @@ class LoginVC: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        if Auth.auth().currentUser != nil {
+            dismiss(animated: true, completion: nil)
+        }
     }
 
     override func didReceiveMemoryWarning() {
