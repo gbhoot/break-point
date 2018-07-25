@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -16,6 +17,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        // Configure Firebase app shared instance
+        FirebaseApp.configure()
+        
+        // Logic to determine if user is currently logged in; if not present login VCs
+        if Auth.auth().currentUser == nil {
+            print("No user")
+            let loginVC = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: ID_SB_LOGIN_VC)
+            self.window?.makeKeyAndVisible()
+            self.window?.rootViewController?.present(loginVC, animated: true, completion: nil)
+        }/* else {
+            
+        }*/
+        
+        
         return true
     }
 

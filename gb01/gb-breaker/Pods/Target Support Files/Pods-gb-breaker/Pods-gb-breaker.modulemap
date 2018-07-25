@@ -1,0 +1,6 @@
+framework module Pods_gb_breaker {
+  umbrella header "Pods-gb-breaker-umbrella.h"
+
+  export *
+  module * { export * }
+}
