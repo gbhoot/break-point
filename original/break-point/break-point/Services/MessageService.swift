@@ -19,6 +19,19 @@ class MessageService {
     
     
     // Functions
+    func uploadPost(withMessage message: String, forUID uid: String, withGroupKey groupKey: String?, sendComplete: @escaping CompletionHandler) {
+        // If there is a group key, then we should send in the group
+        if groupKey != nil {
+            
+        } else {
+            // Otherwise send the message into the public feed
+            
+            //            print(Auth.auth().currentUser?.uid)
+            DB_BASE_FEED.childByAutoId().updateChildValues(["content": message, "senderID": uid])
+            sendComplete(true, nil)
+        }
+    }
+    
     func getAllFeedMessages(receiveComplete: @escaping CompletionHandler) {
         messagesFeed.removeAll()
         DB_BASE_FEED.observeSingleEvent(of: .value) { (feedMessageSnapshot) in
@@ -34,9 +47,5 @@ class MessageService {
                 receiveComplete(true, nil)
             }
         }
-    }
-    
-    func createDBGroup(title: String, desc: String, members: [String], completion: @escaping CompletionHandler) {
-        
-    }
+    }    
 }

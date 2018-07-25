@@ -9,8 +9,6 @@
 import UIKit
 import Firebase
 
-@IBDesignable
-
 class LoginVC: UIViewController {
 
     override func viewDidLoad() {

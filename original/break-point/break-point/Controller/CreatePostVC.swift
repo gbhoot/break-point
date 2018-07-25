@@ -51,7 +51,7 @@ class CreatePostVC: UIViewController {
         if messageTxtView.text != nil && messageTxtView.text != "Say something here..." {
             sendBtn.isEnabled = true
             
-            UserDataService.instance.uploadPost(withMessage: messageTxtView.text, forUID: (Auth.auth().currentUser?.uid)!, withGroupKey: nil) { (isComplete, error) in
+            MessageService.instance.uploadPost(withMessage: messageTxtView.text, forUID: (Auth.auth().currentUser?.uid)!, withGroupKey: nil) { (isComplete, error) in
                 if isComplete {
                     self.dismiss(animated: true, completion: nil)
                 } else {

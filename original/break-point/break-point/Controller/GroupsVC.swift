@@ -16,6 +16,8 @@ class GroupsVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        setupDelegates()
     }
 
     override func didReceiveMemoryWarning() {
@@ -27,6 +29,14 @@ class GroupsVC: UIViewController {
     func setupDelegates() {
         groupsTableView.delegate = self
         groupsTableView.dataSource = self
+    }
+    
+    func setupTable() {
+//        MessageService.instance.getGroup
+    }
+    
+    func setupView() {
+        
     }
 }
 

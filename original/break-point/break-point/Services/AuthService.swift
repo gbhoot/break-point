@@ -19,8 +19,8 @@ class AuthService {
                 userCreationComplete(false, error)
                 return
             }
-            let userData = ["provider": newUser.user.providerID, "email": newUser.user.email] as Dictionary<String, Any>
-            UserDataService.instance.createDBUser(uid: newUser.user.uid, userData: userData)
+            let userData = ["provider": newUser.user.providerID, "email": newUser.user.email!] as Dictionary<String, Any>
+            DatabaseService.instance.createDBUser(uid: newUser.user.uid, userData: userData)
             userCreationComplete(true, nil)
         }
     }

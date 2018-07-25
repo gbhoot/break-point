@@ -25,10 +25,6 @@ class UserDataService {
         userEmail = (Auth.auth().currentUser?.email)!
     }
     
-    func createDBUser(uid: String, userData: Dictionary<String, Any>) {
-        DB_BASE_USERS.child(uid).updateChildValues(userData)
-    }
-    
     func getUserEmail(forUID uid: String, handler: @escaping (_ email: String) -> ()) {
         DB_BASE_USERS.observeSingleEvent(of: .value) { (userSnapshot) in
             guard let users = userSnapshot.children.allObjects as? [DataSnapshot] else { return }
@@ -52,19 +48,6 @@ class UserDataService {
                 }
             }
             handler(emailArray)
-        }
-    }
-    
-    func uploadPost(withMessage message: String, forUID uid: String, withGroupKey groupKey: String?, sendComplete: @escaping CompletionHandler) {
-        // If there is a group key, then we should send in the group
-        if groupKey != nil {
-            
-        } else {
-            // Otherwise send the message into the public feed
-           
-//            print(Auth.auth().currentUser?.uid)
-            DB_BASE_FEED.childByAutoId().updateChildValues(["content": message, "senderID": uid])
-            sendComplete(true, nil)
         }
     }    
 }

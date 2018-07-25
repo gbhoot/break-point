@@ -18,7 +18,6 @@ class FeedVC: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
         
         setupDelegates()
-//        setupTable()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -43,7 +42,6 @@ class FeedVC: UIViewController {
                 self.feedTableView.reloadData()
             }
         }
-//        print(DataService.instance.messagesFeed.count)
     }
 }
 
