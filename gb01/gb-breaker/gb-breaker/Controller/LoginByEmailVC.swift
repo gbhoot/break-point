@@ -22,6 +22,7 @@ class LoginByEmailVC: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        setupDelegates()
         setupView()
     }
 
@@ -35,6 +36,11 @@ class LoginByEmailVC: UIViewController {
     }
     
     // Functions
+    func setupDelegates() {
+        emailTxtField.delegate = self
+        passwordTxtField.delegate = self
+    }
+    
     func setupView() {
         signInBtn.isEnabled = false
     }
@@ -43,5 +49,19 @@ class LoginByEmailVC: UIViewController {
     @IBAction func closeBtnPressed(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
+}
+
+extension LoginByEmailVC: UITextFieldDelegate {
     
+    // Methods
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if textField == emailTxtField {
+            textField.resignFirstResponder()
+            passwordTxtField.becomeFirstResponder()
+        } else {
+            textField.resignFirstResponder()
+        }
+        
+        return true
+    }
 }
