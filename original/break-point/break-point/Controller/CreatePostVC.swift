@@ -38,6 +38,8 @@ class CreatePostVC: UIViewController {
     func setupView() {
         sendBtn.isEnabled = false
         sendBtn.bindToKeyboard()
+        userEmailLbl.text = UserDataService.instance.userEmail
+        userProfileImg.image = #imageLiteral(resourceName: "defaultProfileImage")
     }
 
     // IB-Actions
@@ -49,7 +51,7 @@ class CreatePostVC: UIViewController {
         if messageTxtView.text != nil && messageTxtView.text != "Say something here..." {
             sendBtn.isEnabled = true
             
-            DataService.instance.uploadPost(withMessage: messageTxtView.text, forUID: (Auth.auth().currentUser?.uid)!, withGroupKey: nil) { (isComplete, error) in
+            UserDataService.instance.uploadPost(withMessage: messageTxtView.text, forUID: (Auth.auth().currentUser?.uid)!, withGroupKey: nil) { (isComplete, error) in
                 if isComplete {
                     self.dismiss(animated: true, completion: nil)
                 } else {

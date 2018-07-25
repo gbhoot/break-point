@@ -38,7 +38,7 @@ class FeedVC: UIViewController {
     }
     
     func setupTable() {
-        DataService.instance.getAllFeedMessages { (success, error) in
+        MessageService.instance.getAllFeedMessages { (success, error) in
             if success {
                 self.feedTableView.reloadData()
             }
@@ -54,19 +54,23 @@ extension FeedVC: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return DataService.instance.messagesFeed.count
+        return MessageService.instance.messagesFeed.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = feedTableView.dequeueReusableCell(withIdentifier: ID_TB_FEED_CELL, for: indexPath) as? FeedCell else { return UITableViewCell() }
 
-        let message = DataService.instance.messagesFeed[indexPath.row]
-        cell.configureCell(uid: message.senderID, message: message.content)
+        let message = MessageService.instance.messagesFeed[indexPath.row]
+        UserDataService.instance.getUserEmail(forUID: message.senderID) { (userEmail) in
+            cell.configureCell(email: userEmail, message: message.content)
+        }
         
         return cell
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 120.0
+        return 100.0
     }
+    
+    
 }

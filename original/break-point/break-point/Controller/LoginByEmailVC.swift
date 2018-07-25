@@ -47,20 +47,23 @@ class LoginByEmailVC: UIViewController {
         if emailTxtField.text != nil && passwordTxtField.text != nil {
             AuthService.instance.loginUser(withEmail: emailTxtField.text!, andPassword: passwordTxtField.text!) { (success, loginError) in
                 if success {
+                    UserDataService.instance.setUserData()
+                    print(UserDataService.instance.userEmail)
                     self.dismiss(animated: true, completion: nil)
                 } else {
                     print(String(describing: loginError?.localizedDescription))
+                    AuthService.instance.registerUser(withEmail: self.emailTxtField.text!, andPassword: self.passwordTxtField.text!, userCreationComplete: { (sucess, registrationError) in
+                        if success {
+                            AuthService.instance.loginUser(withEmail: self.emailTxtField.text!, andPassword: self.passwordTxtField.text!, loginComplete: { (success, nil) in
+                                UserDataService.instance.setUserData()
+                                print(UserDataService.instance.userEmail)
+                                self.dismiss(animated: true, completion: nil)
+                            })
+                        } else {
+                            print(String(describing: registrationError?.localizedDescription))
+                        }
+                    })
                 }
-                
-                AuthService.instance.registerUser(withEmail: self.emailTxtField.text!, andPassword: self.passwordTxtField.text!, userCreationComplete: { (sucess, registrationError) in
-                    if success {
-                        AuthService.instance.loginUser(withEmail: self.emailTxtField.text!, andPassword: self.passwordTxtField.text!, loginComplete: { (success, nil) in
-                            self.dismiss(animated: true, completion: nil)
-                        })
-                    } else {
-                        print(String(describing: registrationError?.localizedDescription))
-                    }
-                })
             }
         }
     }

@@ -24,4 +24,6 @@ let ID_SB_LOGIN_EMAIL_VC        =   "loginEmailVC"
 
 // Identifiers - Table View Cells
 let ID_TB_FEED_CELL             =   "feedCell"
+let ID_TB_GROUP_CELL            =   "groupsCell"
+let ID_TB_CONTACTS_CELL         =   "contactsCell"
 

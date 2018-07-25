@@ -20,7 +20,7 @@ class AuthService {
                 return
             }
             let userData = ["provider": newUser.user.providerID, "email": newUser.user.email] as Dictionary<String, Any>
-            DataService.instance.createDBUser(uid: newUser.user.uid, userData: userData)
+            UserDataService.instance.createDBUser(uid: newUser.user.uid, userData: userData)
             userCreationComplete(true, nil)
         }
     }

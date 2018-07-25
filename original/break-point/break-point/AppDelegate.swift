@@ -26,6 +26,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //            window?.makeKeyAndVisible()
 //            window?.rootViewController?.present(loginVC, animated: true, completion: nil)
             self.window?.rootViewController?.present(loginVC, animated: true, completion: nil)
+        } else {
+            UserDataService.instance.setUserData()
         }
         
         return true

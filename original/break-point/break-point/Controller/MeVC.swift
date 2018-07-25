@@ -20,6 +20,7 @@ class MeVC: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        setupView()
     }
 
     override func didReceiveMemoryWarning() {
@@ -28,21 +29,33 @@ class MeVC: UIViewController {
     }
     
     // Functions
+    func setupView() {
+        userEmailLbl.text = UserDataService.instance.userEmail
+        userProfileImg.image = #imageLiteral(resourceName: "defaultProfileImage")
+    }
+    
+    func signOutPopup() {
+        let logoutPopup = UIAlertController(title: "Logout?", message: "Are you sure you want to logout?", preferredStyle: .actionSheet)
+        let logoutAction = UIAlertAction(title: "Logout?", style: .destructive) { (buttonTapped) in
+            self.signUserOut()
+        }
+        
+        logoutPopup.addAction(logoutAction)
+        present(logoutPopup, animated: true, completion: nil)
+    }
+    
     func signUserOut() {
         do {
             try Auth.auth().signOut()
-        } catch {
-            debugPrint("Can't sign out user: \(error.localizedDescription)")
-        }
-
-        if Auth.auth().currentUser == nil {
             let loginVC = storyboard?.instantiateViewController(withIdentifier: ID_SB_LOGIN_VC)
             self.present(loginVC!, animated: true, completion: nil)
+        } catch {
+            debugPrint("Can't sign out user: \(error.localizedDescription)")
         }
     }
     
     // IB-Actions
     @IBAction func signoutBtnPressed(_ sender: Any) {
-        signUserOut()
+        signOutPopup()
     }
 }
