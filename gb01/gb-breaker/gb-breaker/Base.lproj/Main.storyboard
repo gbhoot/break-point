@@ -181,6 +181,13 @@
                                     </label>
                                 </subviews>
                             </stackView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Say something here ..." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="lRb-GB-0g7">
+                                <rect key="frame" x="20" y="200" width="335" height="397"/>
+                                <color key="backgroundColor" red="0.25098039220000001" green="0.27058823529999998" blue="0.31372549020000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" red="0.0" green="0.68627450980000004" blue="0.79215686269999996" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AcJ-nV-WBy">
                                 <rect key="frame" x="0.0" y="617" width="375" height="50"/>
                                 <color key="backgroundColor" red="0.17254901959999999" green="0.18039215689999999" blue="0.2274509804" alpha="1" colorSpace="calibratedRGB"/>
@@ -195,17 +202,10 @@
                                     <action selector="sendBtnPressed:" destination="4hJ-eM-rMd" eventType="touchUpInside" id="i8J-aY-sZg"/>
                                 </connections>
                             </button>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Say something here ..." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="lRb-GB-0g7">
-                                <rect key="frame" x="20" y="200" width="335" height="407"/>
-                                <color key="backgroundColor" red="0.25098039220000001" green="0.27058823529999998" blue="0.31372549020000001" alpha="1" colorSpace="calibratedRGB"/>
-                                <color key="textColor" red="0.0" green="0.68627450980000004" blue="0.79215686269999996" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="17"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
                         </subviews>
                         <color key="backgroundColor" red="0.25098039220000001" green="0.27058823529999998" blue="0.31372549020000001" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="AcJ-nV-WBy" firstAttribute="top" secondItem="lRb-GB-0g7" secondAttribute="bottom" constant="10" id="56M-qr-mDd"/>
+                            <constraint firstItem="AcJ-nV-WBy" firstAttribute="top" secondItem="lRb-GB-0g7" secondAttribute="bottom" constant="20" id="8Eq-Cg-Iwp"/>
                             <constraint firstItem="Ulo-Pg-meW" firstAttribute="trailing" secondItem="AcJ-nV-WBy" secondAttribute="trailing" id="Bru-dY-GCu"/>
                             <constraint firstItem="Ulo-Pg-meW" firstAttribute="trailing" secondItem="eNm-ZZ-ebw" secondAttribute="trailing" id="Fih-bx-6xW"/>
                             <constraint firstItem="lRb-GB-0g7" firstAttribute="top" secondItem="6kH-Xj-6dz" secondAttribute="bottom" constant="20" id="QFL-d7-NYu"/>
