@@ -27,9 +27,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             let loginVC = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: ID_SB_LOGIN_VC)
             self.window?.makeKeyAndVisible()
             self.window?.rootViewController?.present(loginVC, animated: true, completion: nil)
-        }/* else {
-            
-        }*/
+        } else {
+            UserDataService.instance.userLoggedIn()
+        }
         
         
         return true

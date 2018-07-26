@@ -13,7 +13,9 @@ class LoginVC: UIViewController {
     
     // Outlets
     @IBOutlet weak var bgImgHeightConstraint: NSLayoutConstraint!
-
+    @IBOutlet weak var loginWithFBBtn: UIButton!
+    @IBOutlet weak var loginWithGOOGBtn: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -22,7 +24,7 @@ class LoginVC: UIViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        
+        checkLoggedIn()
     }
 
     override func didReceiveMemoryWarning() {
@@ -39,5 +41,7 @@ class LoginVC: UIViewController {
     
     func setupView() {
         bgImgHeightConstraint.constant = view.frame.height / 2
+        loginWithFBBtn.isEnabled = false
+        loginWithGOOGBtn.isEnabled = false
     }
 }
