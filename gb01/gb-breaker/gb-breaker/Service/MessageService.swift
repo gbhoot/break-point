@@ -31,7 +31,7 @@ class MessageService {
     func downloadFeedMessages(completion: @escaping CompletionHandler) {
         self.feedMessages.removeAll()
         FIR_DB_FEED.observeSingleEvent(of: .value) { (messageSnapshot) in
-            guard let messages = messageSnapshot.children.allObjects as? [DataSnapshot] else { return }
+            guard let messages = messageSnapshot.children.allObjects as? [DataSnapshot] else { completion(false); return }
             for message in messages {
                 let content = message.childSnapshot(forPath: "message").value as! String
                 let sender = message.childSnapshot(forPath: "senderID").value as! String

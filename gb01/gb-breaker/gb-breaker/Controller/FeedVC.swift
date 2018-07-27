@@ -40,7 +40,6 @@ class FeedVC: UIViewController {
         feedMessagesTblView.tableFooterView = UIView(frame: CGRect.zero)
         MessageService.instance.downloadFeedMessages { (success) in
             if success {
-                print(MessageService.instance.feedMessages.count    )
                 self.feedMessagesTblView.reloadData()
             }
         }

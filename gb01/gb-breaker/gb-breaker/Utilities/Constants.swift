@@ -21,6 +21,7 @@ let ID_SB_LOGIN_BY_EMAIL_VC         =   "loginByEmailVC"
 // Table Cell IDs
 let ID_TBL_FEED_CELL                =   "feedCell"
 let ID_TBL_GROUPS_CELL              =   "groupsCell"
+let ID_TBL_MEMBER_CELL              =   "memberCell"
 
 // Firebase Database
 let FIR_DB_MAIN                     =   Database.database().reference()

@@ -16,8 +16,9 @@ class Group {
     public private(set) var groupUsers = [String]()
     public private(set) var groupMessages = [Message]()
     
-    init(title: String, description: String) {
+    init(title: String, description: String, users: [String]) {
         self.groupTitle = title
         self.groupDesc = description
+        self.groupUsers = users
     }
 }

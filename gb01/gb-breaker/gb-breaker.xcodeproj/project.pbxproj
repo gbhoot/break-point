@@ -30,6 +30,8 @@
 		023EAA0321097FEE00AD2CD3 /* PostSomethingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 023EAA0221097FEE00AD2CD3 /* PostSomethingVC.swift */; };
 		023EAA06210986E900AD2CD3 /* UIViewExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 023EAA05210986E900AD2CD3 /* UIViewExt.swift */; };
 		023EAA082109976D00AD2CD3 /* FeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 023EAA072109976D00AD2CD3 /* FeedCell.swift */; };
+		02E0B434210A768C0050A092 /* CreateGroupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02E0B433210A768C0050A092 /* CreateGroupVC.swift */; };
+		02E0B436210A793D0050A092 /* MemberCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02E0B435210A793D0050A092 /* MemberCell.swift */; };
 		6763A777914D49D727FB6FF2 /* Pods_gb_breaker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A4B97548F7FFB28AC6FBEE3 /* Pods_gb_breaker.framework */; };
 /* End PBXBuildFile section */
 
@@ -59,6 +61,8 @@
 		023EAA0221097FEE00AD2CD3 /* PostSomethingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostSomethingVC.swift; sourceTree = "<group>"; };
 		023EAA05210986E900AD2CD3 /* UIViewExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExt.swift; sourceTree = "<group>"; };
 		023EAA072109976D00AD2CD3 /* FeedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedCell.swift; sourceTree = "<group>"; };
+		02E0B433210A768C0050A092 /* CreateGroupVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateGroupVC.swift; sourceTree = "<group>"; };
+		02E0B435210A793D0050A092 /* MemberCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberCell.swift; sourceTree = "<group>"; };
 		39E4B4A8653BFDD4864DDB75 /* Pods-gb-breaker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-gb-breaker.debug.xcconfig"; path = "Pods/Target Support Files/Pods-gb-breaker/Pods-gb-breaker.debug.xcconfig"; sourceTree = "<group>"; };
 		6B772F18F1450F4B8FCDA6F5 /* Pods-gb-breaker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-gb-breaker.release.xcconfig"; path = "Pods/Target Support Files/Pods-gb-breaker/Pods-gb-breaker.release.xcconfig"; sourceTree = "<group>"; };
 		8A4B97548F7FFB28AC6FBEE3 /* Pods_gb_breaker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_gb_breaker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -122,6 +126,7 @@
 				023EA9D121090C7A00AD2CD3 /* GroupsVC.swift */,
 				023EA9E82109247600AD2CD3 /* MeVC.swift */,
 				023EAA0221097FEE00AD2CD3 /* PostSomethingVC.swift */,
+				02E0B433210A768C0050A092 /* CreateGroupVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -132,6 +137,7 @@
 				023EA9EF2109299800AD2CD3 /* ShadowView.swift */,
 				023EA9F121092F9B00AD2CD3 /* PaddedTextField.swift */,
 				023EAA072109976D00AD2CD3 /* FeedCell.swift */,
+				02E0B435210A793D0050A092 /* MemberCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -313,10 +319,12 @@
 				023EA9EE210924DF00AD2CD3 /* LoginByEmailVC.swift in Sources */,
 				023EA9FB21093EAD00AD2CD3 /* MessageService.swift in Sources */,
 				023EA9E92109247600AD2CD3 /* MeVC.swift in Sources */,
+				02E0B436210A793D0050A092 /* MemberCell.swift in Sources */,
 				023EAA012109784700AD2CD3 /* Group.swift in Sources */,
 				023EA9D221090C7A00AD2CD3 /* GroupsVC.swift in Sources */,
 				023EA9F221092F9B00AD2CD3 /* PaddedTextField.swift in Sources */,
 				023EA9CE21090C7A00AD2CD3 /* AppDelegate.swift in Sources */,
+				02E0B434210A768C0050A092 /* CreateGroupVC.swift in Sources */,
 				023EA9FD210976FB00AD2CD3 /* User.swift in Sources */,
 				023EA9F02109299800AD2CD3 /* ShadowView.swift in Sources */,
 				023EAA0321097FEE00AD2CD3 /* PostSomethingVC.swift in Sources */,

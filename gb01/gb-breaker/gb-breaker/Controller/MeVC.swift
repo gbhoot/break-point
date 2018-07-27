@@ -9,16 +9,38 @@
 import UIKit
 
 class MeVC: UIViewController {
+    
+    // Outlets
+    @IBOutlet weak var userProfileImg: UIImageView!
+    @IBOutlet weak var userEmailLbl: UILabel!
+    @IBOutlet weak var userInfoTblView: UITableView!
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        setupView()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        setupTable()
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    // Functions
+    func setupTable() {
+        userInfoTblView.tableFooterView = UIView(frame: CGRect.zero)
+    }
+    
+    func setupView() {
+        userProfileImg.image = #imageLiteral(resourceName: "defaultProfileImage")
+        userEmailLbl.text = UserDataService.instance.userEmail
     }
     
     // IB-Actions
